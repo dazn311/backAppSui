@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Image(.title)
-                    .frame(width: 390)
-                Text("Home staging")
-                    .font(type: .bold)
-            }
-            .padding(.horizontal,10)
-        }
-        .frame(maxWidth: .infinity)
-        .background(.mainBG)
+  var body: some View {
+    ScrollView {
+      VStack(alignment: .leading) {
+        PageHeader()
+        PageFirst()
+        PageFirst()
+        PageFirst()
+      }
+      .padding(.horizontal,10)
     }
+    .frame(maxWidth: .infinity)
+    .background(.mainBG)
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
 
 

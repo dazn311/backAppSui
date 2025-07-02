@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+    func font(type: Inter, size: CGFloat = 16) -> some View {
+        self
+            .font(Font.custom(type.rawValue, size: size))
+    }
+}
