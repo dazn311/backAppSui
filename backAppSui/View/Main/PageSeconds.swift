@@ -9,32 +9,90 @@ import SwiftUI
 
 struct PageSeconds: View {
     var body: some View {
-      VStack(alignment: .leading) {
-        HStack{
-          Text("Профессиональный хоумстейджинг".capitalized)
-            .font(type: .bold,size: 14)
-            .foregroundColor(Color(.gray))
+
+      VStack(alignment: .leading,spacing: 0) {
+        ZStack{
+          HStack {
+            Image(.avatar2)
+              .resizable()
+              .aspectRatio(contentMode: .fill)
+              .frame(width: 160,height: 230)
+              .padding(.horizontal,10)
+              .zIndex(1)
+            Spacer()
+          }
+          .padding(.horizontal,10)
+          VStack(alignment: .leading,spacing: 0) {
+            Rectangle()
+              .fill(Color(.clear))
+              .frame(height:100)
+            Rectangle()
+              .fill(Color(.gray.opacity(0.2)))
+              .frame(height:130)
+          }
         }
-        .padding(.horizontal,20)
-        
-        HStack{
-          Text("увеличивает стоимость объекта от 20%")
-            .font(type: .bold,size: 14)
-            .foregroundColor(Color(.gray))
-        }
-        .padding(.horizontal,20)
-        HStack{
-          Text("и ускоряет сделку в 3 раза \(UIScreen.main.bounds.width/2 - 100)")
-            .font(type: .bold,size: 14)
-            .foregroundColor(Color(.gray))
-        }
-        .padding(.horizontal,20)
-        
+        VStack(alignment: .leading,spacing: 0) {
+          Text("Меня зовут".uppercased())
+            .font(type: .bold,size: 22)
+            .foregroundColor(Color(.mainBlack))
+          
+          Text("Наталия".uppercased())
+            .font(type: .bold,size: 22)
+            .foregroundColor(Color(.mainBlack))
+          
+          HStack{
+            Text("я практикующий хоумстейджер")
+              .font(type: .bold,size: 14)
+              .foregroundColor(Color(.gray))
+            Spacer()
+          }
+          
+          HStack{
+            Image(systemName: "square.and.pencil")
+            Text("Мною реализовано более 3-х успешных проекта")
+              .font(type: .bold,size: 14)
+              .foregroundColor(Color(.gray))
+          }
+          .padding(.horizontal,20)
+          .padding(.vertical,5)
+          HStack{
+            Image(systemName: "square.and.pencil")
+            Text("Предлагаю решения, которые максимально отвечают вашим целям и избегают лишних затрат")
+              .fixedSize(horizontal: false, vertical: true)
+              .font(type: .bold,size: 14)
+              .foregroundColor(Color(.gray))
+          }
+          .padding(.horizontal,20)
+          .padding(.vertical,5)
+          HStack{
+            Image(systemName: "square.and.pencil")
+            Text("Работаю совместно со Светой, известной хомстейджер в Москве")
+              .fixedSize(horizontal: false, vertical: true)
+              .font(type: .bold,size: 14)
+              .foregroundColor(Color(.gray))
+            Image(systemName: "paperplane.circle.fill")
+              .foregroundColor(Color.blue)
+          }
+          .padding(.horizontal,20)
+          .padding(.vertical,5)
       }
-      .position(x: UIScreen.main.bounds.width / 2)
+        .padding(.horizontal,10)
+        .padding(.vertical,10)
+        .overlay(
+            Rectangle()
+              .fill(Color.gray.opacity(0.2))
+//              .offset(y:140)
+        )
+          
+        }
+        .padding(.bottom,10)
+        .padding(.horizontal,10)
+        
+        
     }
 }
 
 #Preview {
-    PageSeconds()
+//  ContentView()
+  PageSeconds()
 }

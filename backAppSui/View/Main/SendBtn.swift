@@ -28,9 +28,9 @@ struct SendBtn: View {
         }
       }
     }
-    .padding(.vertical,20)
+    .padding(.vertical,0)
   }
 }
 #Preview {
-  SendBtn()
+  ContentView()
 }

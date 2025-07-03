@@ -10,16 +10,17 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     ScrollView {
-      VStack(alignment: .leading) {
+      VStack(alignment: .leading,spacing: 0) {
         PageHeader()
         PageFirst()
-        PageFirst()
-        PageFirst()
+        PageSeconds()
+        PageThree()
       }
-      .padding(.horizontal,10)
+//      .padding(.horizontal,20)
     }
     .frame(maxWidth: .infinity)
     .background(.mainBG)
+    .scrollIndicators(.hidden)
   }
 }
 

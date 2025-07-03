@@ -9,6 +9,20 @@ import SwiftUI
 
 struct PageHeader: View {
   var body: some View {
+    VStack(alignment: .leading,spacing: 4) {
+      ButtonsGroup()
+      WellComeView()
+    }
+  }
+}
+
+#Preview {
+//  PageHeader()
+  ContentView()
+}
+
+struct ButtonsGroup: View {
+  var body: some View {
     HStack{
       Button {
         
@@ -26,7 +40,6 @@ struct PageHeader: View {
           ZStack{
             Circle()
               .fill(Color(.mainBGIcon))
-            //                            .fill(.mainGrey)
               .frame(width: 40,height: 40)
             Image(systemName: "magnifyingglass")
               .resizable()
@@ -48,15 +61,17 @@ struct PageHeader: View {
         }
       }
     }
+    .padding(.horizontal,6)
+  }
+}
+
+struct WellComeView: View {
+  var body: some View {
     HStack{
       Text("Welcome Back".capitalized)
         .font(type: .bold,size: 16)
         .foregroundColor(Color(hex: "CCC"))
-      Spacer()
     }
+    .padding(.horizontal,6)
   }
-}
-
-#Preview {
-  PageHeader()
 }
