@@ -11,58 +11,61 @@ struct PageFirst: View {
   var body: some View {
 
     VStack(alignment: .leading,spacing: 10) {
-      HStack() {
-        Image(.title)
-          .resizable()
-          .aspectRatio(contentMode: .fill)
-          .frame(height:300)
-          
-      }
-      .padding(.vertical,10)
+      Rectangle()
+        .fill(Color(.clear))
+        .frame(height:400)
+        .overlay(
+          ZStack {
+            PageHeader()
+              .padding(.horizontal,80)
+              .zIndex(1)
+            Image(.title)
+              .resizable()
+              .aspectRatio(contentMode: .fill)
+           
+          }
+        )
+      
       VStack(alignment: .leading,spacing: 0) {
+        
+//        TitleViewWG(title1: "реализуем")
         Text("реализуем".uppercased())
           .font(type: .bold,size: 22)
-          .foregroundColor(Color(.gray))
         Text("дизайнерские проекты".uppercased())
           .font(type: .bold,size: 22)
-          .foregroundColor(Color(.gray))
       }
-      VStack(alignment: .trailing,spacing: 0) {
-        HStack(){
-          Text("в стильные и комфортные".uppercased())
-            .font(type: .bold,size: 22)
-            .foregroundColor(.mainBlack)
-        }
+      .foregroundStyle(.mainGrey)
+
+      VStack(spacing: 0) {
         HStack{
-          Spacer()
-          Text("решения".uppercased())
+//          Spacer()
+          Text("в стильные решения".uppercased())
             .font(type: .bold,size: 22)
             .foregroundColor(.mainBlack)
+            .multilineTextAlignment(.center)
         }
       }
       .padding(.horizontal,10)
       
       
-      VStack(alignment: .trailing,spacing: 0) {
-        HStack{
-          Text("которые продаются и сдаются".uppercased())
-            .font(type: .bold,size: 14)
-            .foregroundColor(Color(.gray))
-        }
-        HStack{
-          Spacer()
-          Text("быстрее и дороже".uppercased())
-            .font(type: .bold,size: 14)
-            .foregroundColor(Color(.gray))
-        }
+      HStack{
+        Spacer()
+        Text("которые сдаются быстрее и дороже")
+          .font(type: .regular,size: 14)
+          .foregroundColor(.mainGrey)
       }
       .padding(.horizontal,10)
       SendBtn()
       PageFirstBottom()
     }
+    .offset(y:-60)
     .padding(.horizontal,6)
-    .padding(.vertical,26)
+//    .padding(.vertical,0)
   }
+}
+
+#Preview {
+  PageFirst()
 }
 
 #Preview {

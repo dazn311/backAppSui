@@ -8,29 +8,28 @@
 import SwiftUI
 
 struct SendBtn: View {
+  var caption: String = "Обсудить сотрудничество"
+  var url: String = "https://t.me/homeupakovka"
   var body: some View {
-    HStack{
-      Button {
-        
-      } label: {
-        ZStack{
-          Rectangle()
-            .fill(Color(hex: "F9F9F9"))
-            .containerRelativeFrame(.vertical, count: 100, span: 5, spacing: 0)
-          HStack {
-            Spacer()
-            Image(systemName: "paperplane.circle.fill")
-            Text("Обсудить сотрудничество")
-              .font(type: .regular,size: 16)
-              .foregroundColor(Color(hex: "000"))
-            Spacer()
-          }
-        }
+    ZStack{
+      Rectangle()
+        .fill(Color(hex: "F9F9F9"))
+        .containerRelativeFrame(.vertical, count: 100, span: 5, spacing: 0)
+      HStack {
+        Spacer()
+        Image(systemName: "paperplane.circle.fill")
+          .foregroundStyle(.blue)
+        Link("\(caption)",
+              destination: URL(string: url)!)
+        .font(type: .bold,size: 16)
+        .foregroundStyle(.gray)
+        Spacer()
       }
+      .padding(.vertical,0)
     }
-    .padding(.vertical,0)
   }
 }
 #Preview {
-  ContentView()
+//  ContentView()
+  SendBtn()
 }

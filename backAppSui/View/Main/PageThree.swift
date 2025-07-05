@@ -10,7 +10,7 @@ import SwiftUI
 struct PageThree: View {
     var body: some View {
       
-      VStack(alignment: .leading, spacing: 20) {
+      VStack(alignment: .leading, spacing: 10) {
         VStack(alignment: .trailing) {
           HStack{
             Spacer()
@@ -31,6 +31,7 @@ struct PageThree: View {
       .padding(.horizontal,6)
 //      .background(Color.red.opacity(0.3))
       
+    SendBtn(caption: "Смотреть больше работ")
     }
 }
 

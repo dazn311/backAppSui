@@ -17,26 +17,29 @@ struct PageFirstBottom : View {
           HStack{
             Text("Профессиональный хоумстейджинг".capitalized)
               .font(type: .bold,size: 14)
-              .foregroundColor(Color(.gray))
           }
           
           HStack{
             Text("увеличивает стоимость объекта от 20%")
               .font(type: .bold,size: 14)
-              .foregroundColor(Color(.gray))
           }
           HStack{
-            Text("и ускоряет сделку в 3 раза")
+            Text("и ускоряет сделку")
               .font(type: .bold,size: 14)
-              .foregroundColor(Color(.gray))
           }
         }
+        .foregroundStyle(.mainGrey)
         Spacer()
       }
     }
     .padding(.horizontal, 0)
   }
 }
+
+#Preview {
+  PageFirstBottom()
+}
+
 #Preview {
   ContentView()
 }

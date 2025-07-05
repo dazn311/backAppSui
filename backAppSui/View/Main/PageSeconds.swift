@@ -41,10 +41,15 @@ struct PageSeconds: View {
             .foregroundColor(Color(.mainBlack))
           
           HStack{
-            Text("я практикующий хоумстейджер")
+            Text("В этой сфере только год")
               .font(type: .bold,size: 14)
               .foregroundColor(Color(.gray))
             Spacer()
+          }
+          HStack{
+            Text("но уже есть успехи в хоумстейджинге")
+              .font(type: .bold,size: 14)
+              .foregroundColor(Color(.gray))
           }
           
           HStack{
@@ -87,7 +92,6 @@ struct PageSeconds: View {
         }
         .padding(.bottom,10)
         .padding(.horizontal,10)
-        
         
     }
 }

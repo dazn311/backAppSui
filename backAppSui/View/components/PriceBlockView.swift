@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+//White & grey
 struct PriceBlockView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var title1: String = "студия"
+  var title2: String = "210 000₽"
+  var body: some View {
+    VStack(alignment: .leading,spacing: 0) {
+      Text(title1)
+        .font(type: .regular,size: 14)
+        .foregroundColor(Color(.mainGrey))
+      Text(title2)
+        .font(type: .regular,size: 14)
+        .foregroundColor(Color(.mainBlack))
     }
+    .padding(.horizontal,0)
+  }
 }
 
 #Preview {

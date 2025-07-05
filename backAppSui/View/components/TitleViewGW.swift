@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct TitleViewGW: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var title1: String = "стоимость"
+  var title2: String = "услуг"
+  var body: some View {
+    HStack(alignment: .top,spacing: 0) {
+      HStack(alignment: .top,spacing: 10) {
+        Text(title2.uppercased())
+          .font(type: .bold,size: 22)
+//          .font(.title)
+          .tracking(2)
+          .foregroundColor(Color(.mainBlack))
+        Text(title1.uppercased())
+          .font(type: .bold,size: 22)
+          .tracking(2)
+          .foregroundColor(Color(.mainGrey))
+      }
     }
+  }
 }
 
 #Preview {
     TitleViewGW()
+//  ContentView()
 }

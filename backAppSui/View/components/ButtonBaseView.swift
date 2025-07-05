@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ButtonBaseView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var body: some View {
+    Button("Done") {
+      
     }
+    .buttonStyle(.borderedProminent)
+    .tint(.brown.mix(with: .black, by: 0.2))
+    .font(.largeTitle)
+    .foregroundStyle(.gray)
+    .padding()
+  }
 }
 
 #Preview {

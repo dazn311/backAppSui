@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct OpenBtnContactView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @Binding var isShowAuth: Bool
+  var body: some View {
+    VStack(alignment: .center) {
+      Button("Авторизоваться") {
+        isShowAuth.toggle()
+      }
+      .frame(maxWidth: .infinity)
+      .buttonStyle(.borderedProminent)
+      .tint(.mainGrey)
+      .foregroundStyle(.white)
+      .padding()
     }
+  }
 }
 
 #Preview {
-    OpenBtnContactView()
+  @Previewable @State var isShowAuth: Bool = false
+  OpenBtnContactView(isShowAuth: $isShowAuth)
+}
+
+#Preview {
+  ContentView()
 }
