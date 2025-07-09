@@ -14,11 +14,24 @@ class UserSettings: ObservableObject {
   init(user: UserModel) {
     self.user = user
   }
+  
+  func upd(username: String, password: String) {
+    if username == "Nata" {
+      user.status = .root
+      user.avatar = .avatar2
+    } else {
+      user.status = .other
+      user.avatar = .user
+    }
+    user.name = username
+    user.password = password
+  }
 }
 
 struct UserModel : Identifiable, Hashable {
   var id: String = UUID().uuidString
   var name: String
+  var password: String
   var lastName: String
   var phone: String
   var adress: String
@@ -39,6 +52,7 @@ struct UserModel : Identifiable, Hashable {
 
 let userDef: UserModel = .init(
   name: "User",
+  password: "",
   lastName: "",
   phone: "",
   adress: "",

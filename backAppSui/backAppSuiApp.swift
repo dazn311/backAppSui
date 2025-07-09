@@ -14,6 +14,7 @@ struct backAppSuiApp: App {
             ContentView()
             .environmentObject(UserSettings(user: .init(
               name: "User",
+              password: "",
               lastName: "",
               phone: "",
               adress: "",

@@ -29,7 +29,6 @@ struct PageFirst: View {
                 ], startPoint: .top, endPoint: .bottom)
               }
           }
-          
         )
 
       VStack(alignment: .leading,spacing: 0) {
