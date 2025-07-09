@@ -30,7 +30,11 @@ struct PageThree: View {
           
           ForEach(imagesArr2) { images in
             CarouselView(images:images.data,caption: images.data[0].altText,position: .camera(
-              MapCamera(centerCoordinate: images.data[0].location, distance: 3000)
+              MapCamera(
+                centerCoordinate: images.data[0].location,
+                distance: 3000,
+                heading: 0,
+                pitch: 80)
             ))
           }
           

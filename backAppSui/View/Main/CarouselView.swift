@@ -25,7 +25,7 @@ struct CarouselView: View {
           position: .camera(
             MapCamera(
               centerCoordinate: images[0].location,
-              distance: 2000,
+              distance: 1000,
               heading: 250,
               pitch: 80
             )
@@ -47,7 +47,9 @@ struct CarouselView: View {
           Image(systemName: "greaterthan")
             .imageScale(.large)
             .font(.title3)
+            .shadow(color: .white, radius: 3)
             .padding(.trailing,5)
+//            .border(.red)
         }
         .overlay(alignment: .topLeading) {
           Text(caption)
