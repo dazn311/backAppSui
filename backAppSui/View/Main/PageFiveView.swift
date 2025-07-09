@@ -52,6 +52,6 @@ struct PageFiveView: View {
     }
 }
 
-#Preview {
+#Preview(String(describing: "PageFiveView")){
     PageFiveView()
 }

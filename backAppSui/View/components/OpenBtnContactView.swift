@@ -26,8 +26,9 @@ struct OpenBtnContactView: View {
 #Preview {
   @Previewable @State var isShowAuth: Bool = false
   OpenBtnContactView(isShowAuth: $isShowAuth)
+    .preferredColorScheme(.dark)
 }
 
-#Preview {
+#Preview(String(describing: "ContentView")){
   ContentView()
 }

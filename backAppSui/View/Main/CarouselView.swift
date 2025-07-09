@@ -6,17 +6,63 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct CarouselView: View {
-  var image: [ImageModel]
+  var images: [ImageModel]
   var caption: String
+  @State var position: MapCameraPosition
+  @Namespace var namespace
   
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
-      HStack{
-        Text(caption)
+      // Current location
+
+      NavigationLink {
+        MapDetailsView(
+          image:images[0],
+          caption: images[0].altText,
+          position: .camera(
+            MapCamera(
+              centerCoordinate: images[0].location,
+              distance: 2000,
+              heading: 250,
+              pitch: 80
+            )
+          )
+        )
+        .navigationTransition(.zoom(sourceID: 1, in: namespace))
+      } label : {
+        Map(position: $position) {
+          Annotation(caption,coordinate: images[0].location) {
+            Image(systemName: "mappin.and.ellipse")
+              .imageScale(.large)
+              .symbolEffect(.pulse)
+          }
+          .annotationTitles(.hidden)
+        }
+        .frame(height:100)
+        .clipShape(.rect(cornerRadius: 15))
+        .overlay(alignment: .trailing) {
+          Image(systemName: "greaterthan")
+            .imageScale(.large)
+            .font(.title3)
+            .padding(.trailing,5)
+        }
+        .overlay(alignment: .topLeading) {
+          Text(caption)
+            .padding([.leading,.bottom],5)
+            .padding(.trailing,8)
+            .background(.black.opacity(0.33))
+            .clipShape(.rect(bottomTrailingRadius: 10))
+        }
+        
+        .clipShape(.rect(cornerRadius: 10))
       }
-      .padding(.horizontal,10)
+      .matchedTransitionSource(id: 1, in: namespace)
+//    }
+//    .navigationTitle("daz")
+      // Carousel
       LazyVStack(spacing: 15) {
         Carousel()
       }
@@ -34,9 +80,10 @@ struct CarouselView: View {
   @ViewBuilder
   func Carousel() -> some View {
 //    let spacing: CGFloat = 6
+
     ScrollView(.horizontal) {
       LazyHStack {
-        ForEach(image) { model in
+        ForEach(images) { model in
           Image(model.image)
             .resizable()
             .aspectRatio(contentMode: .fill)
@@ -54,8 +101,22 @@ struct CarouselView: View {
   }
 }
 
-#Preview {
-//  CarouselView(image:images1)
+#Preview(String(describing: "CarouselView")){
+  NavigationStack {
+    CarouselView(
+      images:images1,
+      caption: images1[0].altText,
+      position: .camera(
+        MapCamera(centerCoordinate: images1[0].location, distance: 3000)
+      )
+    )
+  }
+}
+
+#Preview(String(describing: "PageThree")){
   PageThree()
-//  ContentView()
+}
+
+#Preview(String(describing: "ContentView")){
+  ContentView()
 }

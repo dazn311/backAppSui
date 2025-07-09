@@ -15,17 +15,23 @@ struct PageFirst: View {
         .fill(Color(.clear))
         .frame(height:400)
         .overlay(
-          ZStack {
+          ZStack(alignment: .leading) {
             PageHeader()
-              .padding(.horizontal,80)
+              .padding(.horizontal,0)
               .zIndex(1)
-            Image(.title)
-              .resizable()
-              .aspectRatio(contentMode: .fill)
-           
+            Image(.natusiaMirror)
+              .centerCropped()
+              .overlay() {
+                LinearGradient(stops: [
+                  Gradient.Stop(color: .clear, location: 0.8),
+                  Gradient.Stop(color: .mainBG, location: 1),
+                  
+                ], startPoint: .top, endPoint: .bottom)
+              }
           }
+          
         )
-      
+
       VStack(alignment: .leading,spacing: 0) {
         
 //        TitleViewWG(title1: "реализуем")
@@ -35,16 +41,18 @@ struct PageFirst: View {
           .font(type: .bold,size: 22)
       }
       .foregroundStyle(.mainGrey)
+      .padding(.horizontal,10)
 
-      VStack(spacing: 0) {
+      VStack(alignment: .trailing,spacing: 0) {
         HStack{
-//          Spacer()
+          Spacer()
           Text("в стильные решения".uppercased())
             .font(type: .bold,size: 22)
             .foregroundColor(.mainBlack)
             .multilineTextAlignment(.center)
         }
       }
+//      .frame(width:400)
       .padding(.horizontal,10)
       
       
@@ -58,16 +66,17 @@ struct PageFirst: View {
       SendBtn()
       PageFirstBottom()
     }
-    .offset(y:-60)
-    .padding(.horizontal,6)
+//    .offset(y:-44)
+//    .padding(.horizontal,6)
+    .preferredColorScheme(.dark)
 //    .padding(.vertical,0)
   }
 }
 
-#Preview {
+#Preview(String(describing: "PageFirst")){
   PageFirst()
 }
 
-#Preview {
+#Preview(String(describing: "ContentView")){
   ContentView()
 }

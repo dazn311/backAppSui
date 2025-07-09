@@ -6,36 +6,46 @@
 //
 
 import SwiftUI
+import MapKit
+
 
 struct PageThree: View {
+  @State var imagesArr2: [ImagesArr] = imagesArr
+  
     var body: some View {
-      
-      VStack(alignment: .leading, spacing: 10) {
-        VStack(alignment: .trailing) {
-          HStack{
-            Spacer()
-            Text("Мои работы".uppercased())
-            Text("говорять".uppercased())
-              .foregroundColor(Color(.gray))
+        VStack(alignment: .leading, spacing: 10) {
+          VStack(alignment: .trailing) {
+            HStack{
+              Spacer()
+              Text("Мои работы".uppercased())
+              Text("говорять".uppercased())
+                .foregroundColor(Color(.gray))
+            }
+            HStack{
+              Text("сами за себя".uppercased())
+                .foregroundColor(Color(.gray))
+            }
           }
-          HStack{
-            Text("сами за себя".uppercased())
-              .foregroundColor(Color(.gray))
+          .padding(.horizontal,0)
+          
+          ForEach(imagesArr2) { images in
+            CarouselView(images:images.data,caption: images.data[0].altText,position: .camera(
+              MapCamera(centerCoordinate: images.data[0].location, distance: 3000)
+            ))
           }
+          
         }
-        .padding(.horizontal,0)
-//        .background(Color.green.opacity(0.3))
-        CarouselView(image:images1,caption: "Квартира / 42.2 кв.м/ бюджет 1.3 млн рублей")
-        CarouselView(image:images2,caption: "Евродвушка с ремонтом от застройщика")
-      }
-      .padding(.horizontal,6)
-//      .background(Color.red.opacity(0.3))
-      
-    SendBtn(caption: "Смотреть больше работ")
+        .padding(.horizontal,6)
+        
+        SendBtn(caption: "Смотреть больше работ")
+
     }
 }
 
-#Preview {
+#Preview(String(describing: "PageThree")){
   PageThree()
-//  ContentView()
+}
+
+#Preview(String(describing: "ContentView")){
+  ContentView()
 }

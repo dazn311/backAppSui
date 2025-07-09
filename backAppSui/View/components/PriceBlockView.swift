@@ -24,6 +24,6 @@ struct PriceBlockView: View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "PriceBlockView")){
     PriceBlockView()
 }

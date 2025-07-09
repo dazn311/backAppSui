@@ -10,7 +10,45 @@ import SwiftUI
 struct PageFour: View {
     var body: some View {
       VStack(alignment: .leading){
-//        TitleViewWG(title1: "стоимость",title2: "услуг")
+        TitleViewWG(title1: "стоимость",title2: "услуг")
+        
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())],alignment: .trailing) {
+          Text("")
+
+          TitleViewGW(title1: "Комплектация",title2: "")
+            .frame(minWidth:230)
+
+          Text("")
+
+          TitleViewGW(title1: "",title2: "\"под ключ\"")
+            .frame(minWidth:230)
+          Text("")
+
+          Text("Для тех, кто инвестировал в недвижимость и хочет получить\n готовую квартиру")
+            .font(type: .regular,size: 14)
+            .frame(minWidth:230)
+            .foregroundColor(Color(.mainGrey))
+
+          Text("")
+
+          Text("для быстрой и эффективной сдачи в аренду или продажи")
+            .font(type: .regular,size: 14)
+            .frame(minWidth:230)
+            .foregroundColor(Color(.mainBlack))
+            .padding(.bottom,10)
+          
+          Text("")
+
+          ListItemView(title1: "/00", title2: "замеры объекта")
+            .frame(minWidth:230)
+            
+          Text("")
+
+          ListItemView(title1: "/01",)
+            .frame(minWidth:230)
+        }
+//        .padding(30)
+
         HStack(alignment: .top,spacing: 0) {
           VStack(alignment: .leading,spacing: 6){
             TitleViewWG(title1: "стоимость ",title2: "")
@@ -70,10 +108,11 @@ struct PageFour: View {
           .foregroundColor(Color(.mainGrey))
           .padding(.bottom,10)
       }
+      .preferredColorScheme(.dark)
     }
 }
 
-#Preview {
+#Preview(String(describing: "PageFour")){
   ScrollView{
     PageFour()
   }

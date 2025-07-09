@@ -20,6 +20,6 @@ struct ButtonBaseView: View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "ButtonBaseView")){
     ButtonBaseView()
 }

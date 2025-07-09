@@ -24,6 +24,6 @@ struct ListItemView: View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "ListItemView")){
     ListItemView()
 }

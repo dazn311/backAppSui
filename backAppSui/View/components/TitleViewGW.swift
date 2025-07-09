@@ -27,7 +27,7 @@ struct TitleViewGW: View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "TitleViewGW")){
     TitleViewGW()
 //  ContentView()
 }

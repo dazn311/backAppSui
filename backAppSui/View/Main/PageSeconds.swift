@@ -16,7 +16,9 @@ struct PageSeconds: View {
             Image(.avatar2)
               .resizable()
               .aspectRatio(contentMode: .fill)
-              .frame(width: 160,height: 230)
+              .frame(width: 160,height: 160)
+              .contentShape(.circle)
+              .clipShape(.circle)
               .padding(.horizontal,10)
               .zIndex(1)
             Spacer()
@@ -96,7 +98,9 @@ struct PageSeconds: View {
     }
 }
 
-#Preview {
-//  ContentView()
+#Preview(String(describing: "PageSeconds")){
   PageSeconds()
+}
+#Preview(String(describing: "ContentView")){
+  ContentView()
 }

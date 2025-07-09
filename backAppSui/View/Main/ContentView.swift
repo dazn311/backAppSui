@@ -8,33 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var isShowAuth: Bool = false
+  @State private var images: [ImagesArr] = imagesArr
   var body: some View {
-    ScrollView {
-      VStack(alignment: .leading,spacing: 30) {
-//        PageHeader()
-        PageFirst()
-        PageSeconds()
-        PageThree()
-        PageFour()
-        PageFiveView()
-        PageSixView()
-        OpenBtnContactView(isShowAuth: $isShowAuth)
+    NavigationStack {
+      ScrollView {
+        VStack(alignment: .leading,spacing: 30) {
+          PageFirst()
+          PageSeconds()
+          PageThree()
+          PageFour()
+          PageFiveView()
+          PageSixView()
+        }
       }
-//      .padding(.horizontal,20)
-    }
-    .frame(maxWidth: .infinity)
-    .background(.mainBG)
-    .scrollIndicators(.hidden)
-    .padding(.bottom)
-    .sheet(isPresented: $isShowAuth) {
-      ContactFormView()
+      .frame(maxWidth: .infinity)
+      .background(.mainBG)
+      .scrollIndicators(.hidden)
+      .padding(.bottom)
     }
   }
 }
 
-#Preview {
+#Preview(String(describing: "ContentView")){
   ContentView()
+    .preferredColorScheme(.dark)
 }
 
 

@@ -29,7 +29,11 @@ struct SendBtn: View {
     }
   }
 }
-#Preview {
-//  ContentView()
+
+#Preview(String(describing: "SendBtn")){
   SendBtn()
+}
+
+#Preview(String(describing: "ContentView")){
+  ContentView()
 }

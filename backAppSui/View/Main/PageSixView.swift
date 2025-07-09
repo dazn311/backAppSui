@@ -37,9 +37,10 @@ struct PageSixView: View {
       SendBtn(caption:"записаться на консультация")
 
     }
+    .preferredColorScheme(.dark)
   }
 }
 
-#Preview {
+#Preview(String(describing: "PageSixView")){
     PageSixView()
 }

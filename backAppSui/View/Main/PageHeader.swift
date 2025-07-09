@@ -11,10 +11,11 @@ struct PageHeader: View {
   var body: some View {
     VStack(alignment: .leading,spacing: 3) {
       ButtonsGroup()
-      WellComeView()
+//      WellComeView()
       Spacer()
     }
-    .padding(.top,60)
+    .padding(.top,50)
+//    .preferredColorScheme(.dark)
   }
 }
 
@@ -27,10 +28,13 @@ struct PageHeader: View {
 }
 
 struct ButtonsGroup: View {
+  @State var isShowAuth: Bool = false
+  
   var body: some View {
-    HStack{
+    
+    HStack(alignment: .top){
       Button {
-        
+        isShowAuth.toggle()
       } label: {
         Image(.avatar60)
           .resizable()
@@ -38,21 +42,7 @@ struct ButtonsGroup: View {
           .clipShape(Circle())
       }
       Spacer()
-      HStack(spacing: 10){
-        Button {
-          
-        } label: {
-          ZStack{
-            Circle()
-              .fill(Color(.mainBGIcon))
-              .frame(width: 40,height: 40)
-            Image(systemName: "magnifyingglass")
-              .resizable()
-              .frame(width: 20,height: 20)
-              .background(Color(.mainBGIcon))
-          }
-          
-        }
+      VStack(spacing: 10){
         Button {
           
         } label: {
@@ -65,9 +55,26 @@ struct ButtonsGroup: View {
               .frame(width: 20,height: 20)
           }
         }
+        Button {
+          
+        } label: {
+          ZStack{
+            Circle()
+              .fill(Color(.mainBGIcon))
+              .frame(width: 40,height: 40)
+            Image(systemName: "magnifyingglass")
+              .resizable()
+              .frame(width: 20,height: 20)
+          }
+          
+        }
       }
+      
     }
     .padding(.horizontal,6)
+    .sheet(isPresented: $isShowAuth) {
+      ContactFormView()
+    }
   }
 }
 

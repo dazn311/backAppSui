@@ -36,10 +36,10 @@ struct PageFirstBottom : View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "PageFirstBottom")){
   PageFirstBottom()
 }
 
-#Preview {
+#Preview(String(describing: "ContentView")){
   ContentView()
 }

@@ -24,6 +24,7 @@ struct ContactFormView: View {
   }
 }
 
-#Preview {
+#Preview(String(describing: "ContactFormView")){
     ContactFormView()
+    .preferredColorScheme(.dark)
 }
