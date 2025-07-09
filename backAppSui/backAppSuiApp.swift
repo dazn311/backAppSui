@@ -12,6 +12,16 @@ struct backAppSuiApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .environmentObject(UserSettings(user: .init(
+              name: "User",
+              lastName: "",
+              phone: "",
+              adress: "",
+              accessesAdress: [],
+              imagesObject: [],
+              avatar: .user,
+              status: .other)
+            ))
         }
     }
 }

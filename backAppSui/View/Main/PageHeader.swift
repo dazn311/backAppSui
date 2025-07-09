@@ -28,6 +28,7 @@ struct PageHeader: View {
 }
 
 struct ButtonsGroup: View {
+  @EnvironmentObject private var userSettings: UserSettings
   @State var isShowAuth: Bool = false
   
   var body: some View {
@@ -36,7 +37,7 @@ struct ButtonsGroup: View {
       Button {
         isShowAuth.toggle()
       } label: {
-        Image(.avatar60)
+        Image(userSettings.user.avatar)
           .resizable()
           .frame(width: 60,height: 60)
           .clipShape(Circle())
@@ -78,15 +79,3 @@ struct ButtonsGroup: View {
   }
 }
 
-struct WellComeView: View {
-  var body: some View {
-    HStack{
-      Text("Welcome Back".capitalized)
-        .font(type: .bold,size: 16)
-        .foregroundColor(.black)
-        .background(.white.opacity(0.5))
-//        .foregroundColor(Color(hex: "CCC"))
-    }
-    .padding(.horizontal,6)
-  }
-}

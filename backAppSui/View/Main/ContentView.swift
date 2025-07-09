@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var images: [ImagesArr] = imagesArr
+  
   var body: some View {
     NavigationStack {
       ScrollView {

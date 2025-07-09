@@ -19,7 +19,7 @@ struct PageFirst: View {
             PageHeader()
               .padding(.horizontal,0)
               .zIndex(1)
-            Image(.natusiaMirror)
+            Image(.titleBG)
               .centerCropped()
               .overlay() {
                 LinearGradient(stops: [

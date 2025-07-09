@@ -6,11 +6,47 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C0CF49942E1E3E96002760DA /* HomeStageSticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C0CF498D2E1E3E96002760DA /* HomeStageSticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0CF49922E1E3E96002760DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0D6E56B2E145410009566F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0CF498C2E1E3E96002760DA;
+			remoteInfo = HomeStageSticker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0CF49952E1E3E96002760DA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0CF49942E1E3E96002760DA /* HomeStageSticker.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C0CF498D2E1E3E96002760DA /* HomeStageSticker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HomeStageSticker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D6E5732E145410009566F1 /* backAppSui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = backAppSui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C0CF49992E1E3E96002760DA /* Exceptions for "HomeStageSticker" folder in "HomeStageSticker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C0CF498C2E1E3E96002760DA /* HomeStageSticker */;
+		};
 		C0D6E5852E1459DC009566F1 /* Exceptions for "backAppSui" folder in "backAppSui" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -21,6 +57,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C0CF498E2E1E3E96002760DA /* HomeStageSticker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C0CF49992E1E3E96002760DA /* Exceptions for "HomeStageSticker" folder in "HomeStageSticker" target */,
+			);
+			path = HomeStageSticker;
+			sourceTree = "<group>";
+		};
 		C0D6E5752E145410009566F1 /* backAppSui */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -46,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D6E5752E145410009566F1 /* backAppSui */,
+				C0CF498E2E1E3E96002760DA /* HomeStageSticker */,
 				C0D6E5742E145410009566F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D6E5732E145410009566F1 /* backAppSui.app */,
+				C0CF498D2E1E3E96002760DA /* HomeStageSticker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +107,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C0CF498C2E1E3E96002760DA /* HomeStageSticker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0CF49982E1E3E96002760DA /* Build configuration list for PBXNativeTarget "HomeStageSticker" */;
+			buildPhases = (
+				C0CF498B2E1E3E96002760DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0CF498E2E1E3E96002760DA /* HomeStageSticker */,
+			);
+			name = HomeStageSticker;
+			packageProductDependencies = (
+			);
+			productName = HomeStageSticker;
+			productReference = C0CF498D2E1E3E96002760DA /* HomeStageSticker.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		C0D6E5722E145410009566F1 /* backAppSui */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0D6E57E2E145410009566F1 /* Build configuration list for PBXNativeTarget "backAppSui" */;
@@ -68,10 +134,12 @@
 				C0D6E56F2E145410009566F1 /* Sources */,
 				C0D6E5702E145410009566F1 /* Frameworks */,
 				C0D6E5712E145410009566F1 /* Resources */,
+				C0CF49952E1E3E96002760DA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0CF49932E1E3E96002760DA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C0D6E5752E145410009566F1 /* backAppSui */,
@@ -93,6 +161,9 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					C0CF498C2E1E3E96002760DA = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					C0D6E5722E145410009566F1 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -113,11 +184,19 @@
 			projectRoot = "";
 			targets = (
 				C0D6E5722E145410009566F1 /* backAppSui */,
+				C0CF498C2E1E3E96002760DA /* HomeStageSticker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C0CF498B2E1E3E96002760DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0D6E5712E145410009566F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +216,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C0CF49932E1E3E96002760DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0CF498C2E1E3E96002760DA /* HomeStageSticker */;
+			targetProxy = C0CF49922E1E3E96002760DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C0CF49962E1E3E96002760DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6333JALVQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeStageSticker/Info.plist;
+				INFOPLIST_KEY_NSStickerSharingLevel = OS;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.homesstaging.backAppSui.HomeStageSticker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0CF49972E1E3E96002760DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6333JALVQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeStageSticker/Info.plist;
+				INFOPLIST_KEY_NSStickerSharingLevel = OS;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.homesstaging.backAppSui.HomeStageSticker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C0D6E57C2E145410009566F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +443,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C0CF49982E1E3E96002760DA /* Build configuration list for PBXNativeTarget "HomeStageSticker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0CF49962E1E3E96002760DA /* Debug */,
+				C0CF49972E1E3E96002760DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C0D6E56E2E145410009566F1 /* Build configuration list for PBXProject "backAppSui" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
