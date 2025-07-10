@@ -10,68 +10,22 @@ import MapKit
 
 struct CarouselView: View {
   var images: [ImageModel]
+  var width: Double
   var caption: String
   @State var position: MapCameraPosition
   @Namespace var namespace
   
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
-      // Current location
-
-      NavigationLink {
-        MapDetailsView(
-          image:images[0],
-          caption: images[0].altText,
-          position: .camera(
-            MapCamera(
-              centerCoordinate: images[0].location,
-              distance: 1000,
-              heading: 250,
-              pitch: 80
-            )
-          )
-        )
-        .navigationTransition(.zoom(sourceID: 1, in: namespace))
-      } label : {
-        Map(position: $position) {
-          Annotation(caption,coordinate: images[0].location) {
-            Image(systemName: "mappin.and.ellipse")
-              .imageScale(.large)
-              .symbolEffect(.pulse)
-          }
-          .annotationTitles(.hidden)
-        }
-        .frame(height:100)
-        .clipShape(.rect(cornerRadius: 15))
-        .overlay(alignment: .trailing) {
-          Image(systemName: "greaterthan")
-            .imageScale(.large)
-            .font(.title3)
-            .shadow(color: .white, radius: 3)
-            .padding(.trailing,5)
-//            .border(.red)
-        }
-        .overlay(alignment: .topLeading) {
-          Text(caption)
-            .padding([.leading,.bottom],5)
-            .padding(.trailing,8)
-            .background(.black.opacity(0.33))
-            .clipShape(.rect(bottomTrailingRadius: 10))
-        }
-        
-        .clipShape(.rect(cornerRadius: 10))
-      }
-      .matchedTransitionSource(id: 1, in: namespace)
-//    }
-//    .navigationTitle("daz")
       // Carousel
       LazyVStack(spacing: 15) {
         Carousel()
       }
-      .safeAreaPadding(6)
+      .safeAreaPadding(.vertical,6)
     }
     
   }
+  
   @ViewBuilder
   func HeaderView() -> some View {
     HStack{
@@ -84,20 +38,56 @@ struct CarouselView: View {
 //    let spacing: CGFloat = 6
 
     ScrollView(.horizontal) {
-      LazyHStack {
+      TabView {
         ForEach(images) { model in
-          Image(model.image)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .containerRelativeFrame(.horizontal)
-            .frame(height:400)
-            .clipShape(.rect(cornerRadius: 10))
-//            .shadow(color: .black.opacity(0.4),radius: 5,x:1,y:1)
+//          Tab(model.altText,systemImage: "heart.fill") {
+            Image(model.image)
+              .resizable()
+              .aspectRatio(contentMode: .fill)
+              .containerRelativeFrame(.horizontal)
+              .frame(height:width)
+              .clipShape(.rect(cornerRadius: 10))
+              .toolbarBackgroundVisibility(.visible, for: .tabBar)
+              .overlay(alignment: .topLeading) {
+                Text(model.altText)
+                  .padding([.leading,.bottom],5)
+                  .padding(.trailing,8)
+                  .background(.black.opacity(0.33))
+                  .clipShape(.rect(bottomTrailingRadius: 10))
+              }
+              .overlay(alignment: .topTrailing) {
+                NavigationLink {
+                  MapDetailsView(
+                    image:images[0],
+                    caption: images[0].altText,
+                    position: .camera(
+                      MapCamera(
+                        centerCoordinate: images[0].location,
+                        distance: 1000,
+                        heading: 250,
+                        pitch: 80
+                      )
+                    )
+                  )
+                  .navigationTransition(.zoom(sourceID: 1, in: namespace))
+                } label : {
+                  Image(systemName: "globe.americas")
+                    .imageScale(.large)
+                    .font(.title3)
+                    .shadow(color: .white, radius: 3)
+                    .padding()
+        //            .border(.red)
+                }
+                .matchedTransitionSource(id: 1, in: namespace)
+
+              }
+//          }
         }
       }
-      .scrollTargetLayout()
+      .tabViewStyle(.page)
+      .frame(width: width)
     }
-    .frame(height:400)
+    .frame(height:width)
     .scrollIndicators(.hidden)
     .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
   }
@@ -107,6 +97,7 @@ struct CarouselView: View {
   NavigationStack {
     CarouselView(
       images:images1,
+      width:400,
       caption: images1[0].altText,
       position: .camera(
         MapCamera(centerCoordinate: images1[0].location, distance: 3000)
@@ -116,7 +107,7 @@ struct CarouselView: View {
 }
 
 #Preview(String(describing: "PageThree")){
-  PageThree()
+  PageThree(width: 400)
 }
 
 #Preview(String(describing: "ContentView")){

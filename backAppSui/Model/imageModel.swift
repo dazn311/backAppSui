@@ -30,20 +30,21 @@ struct ImageModel : Identifiable, Hashable {
 //55.861251, 37.377093
 let images1: [ImageModel] = [
   .init(altText: "ЖК Митинский лес", image: .jkMitinskiiLes,latitude: 55.861251, longitude: 37.377093),
-  .init(altText: "ЖК Митинский лес", image: .jkMitinskiiLes2,latitude: 55.861251, longitude: 37.377093),
-  .init(altText: "ЖК Митинский лес", image: .jkMitinskiiLes3,latitude: 55.861251, longitude: 37.377093),
-  .init(altText: "ЖК Митинский лес", image: .jkMitinskiiLes4,latitude: 55.861251, longitude: 37.377093),
+  .init(altText: "Кровать из Лондона", image: .jkMitinskiiLes2,latitude: 55.861251, longitude: 37.377093),
+  .init(altText: "Кресла из озона", image: .jkMitinskiiLes3,latitude: 55.861251, longitude: 37.377093),
+  .init(altText: "Кухня ручной работы", image: .jkMitinskiiLes4,latitude: 55.861251, longitude: 37.377093),
 ]
 //55.841818, 37.496940
 let images2: [ImageModel] = [
   .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii,latitude: 55.841818, longitude: 37.496940),
-  .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii2,latitude: 55.841818, longitude: 37.496940),
-  .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii3,latitude: 55.841818, longitude: 37.496940),
-  .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii4,latitude: 55.841818, longitude: 37.496940),
-  .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii5,latitude: 55.841818, longitude: 37.496940),
-  .init(altText: "ЖК Кронштатский", image: .jkKronshtatskii6,latitude: 55.841818, longitude: 37.496940),
+  .init(altText: "ЖК Кронштатский 2", image: .jkKronshtatskii2,latitude: 55.841818, longitude: 37.496940),
+  .init(altText: "ЖК Кронштатский 3", image: .jkKronshtatskii3,latitude: 55.841818, longitude: 37.496940),
+  .init(altText: "ЖК Кронштатский 4", image: .jkKronshtatskii4,latitude: 55.841818, longitude: 37.496940),
+  .init(altText: "ЖК Кронштатский 5", image: .jkKronshtatskii5,latitude: 55.841818, longitude: 37.496940),
+  .init(altText: "ЖК Кронштатский 6", image: .jkKronshtatskii6,latitude: 55.841818, longitude: 37.496940),
 ]
 
+//used in PageThree;
 let imagesArr:[ImagesArr] = [
   .init(data:images1),
   .init(data:images2)

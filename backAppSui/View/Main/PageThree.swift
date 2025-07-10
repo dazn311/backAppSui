@@ -10,6 +10,7 @@ import MapKit
 
 
 struct PageThree: View {
+  var width: Double
   @State var imagesArr2: [ImagesArr] = imagesArr
   
     var body: some View {
@@ -29,7 +30,11 @@ struct PageThree: View {
           .padding(.horizontal,0)
           
           ForEach(imagesArr2) { images in
-            CarouselView(images:images.data,caption: images.data[0].altText,position: .camera(
+            CarouselView(
+              images:images.data,
+              width:width,
+              caption: images.data[0].altText,
+              position: .camera(
               MapCamera(
                 centerCoordinate: images.data[0].location,
                 distance: 3000,
@@ -47,9 +52,21 @@ struct PageThree: View {
 }
 
 #Preview(String(describing: "PageThree")){
-  PageThree()
+  PageThree(width: 400)
 }
 
 #Preview(String(describing: "ContentView")){
   ContentView()
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
+//    .preferredColorScheme(.dark)
 }

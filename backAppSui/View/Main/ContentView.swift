@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//  @State private var images: [ImagesArr] = imagesArr
   let dataArr:[PagePriceModel] = Prices().dataArr
 
   var body: some View {
@@ -18,9 +17,10 @@ struct ContentView: View {
           VStack(alignment: .leading,spacing: 30) {
             PageFirst()
             PageSeconds()
-            PageThree()
+            PageThree(width: geo.size.width)
 
             Divider()
+
             ForEach(dataArr) {data in
               PricesPageView(data:data, width: geo.size.width)
             }
