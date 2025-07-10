@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var images: [ImagesArr] = imagesArr
-  
+//  @State private var images: [ImagesArr] = imagesArr
+  let dataArr:[PagePriceModel] = Prices().dataArr
+
   var body: some View {
     GeometryReader { geo in
       NavigationStack {
@@ -18,10 +19,12 @@ struct ContentView: View {
             PageFirst()
             PageSeconds()
             PageThree()
+
             Divider()
-            PricesPageView(width: geo.size.width)
-            PageFiveView()
-            PageSixView()
+            ForEach(dataArr) {data in
+              PricesPageView(data:data, width: geo.size.width)
+            }
+
             SendBtn()
           }
         }

@@ -1,0 +1,306 @@
+[
+  {
+    "id":1,
+    "Header1":{
+      "id":1,
+      "word1":"стоимость",
+      "word2":"услуг",
+      "color1":"white",
+      "color2":"grey",
+      "isHorizontal":true
+    },
+    "Header2":{
+      "id":1,
+      "word1":"Комплектация",
+      "word2":"под ключ",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "HeaderDescription":{
+      "id":1,
+      "word1":"Для тех, кто инвестировал в недвижимость и хочет получить готовую квартиру для быстрой и эффективной сдачи в аренду или продажи",
+      "word2":"для быстрой и эффективной сдачи в аренду или продажи",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "ServiceList": [
+      {
+        "id":0,
+        "word1":"/00",
+        "word2":"замеры объекта",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":1,
+        "word1":"/01",
+        "word2":"планировочные решения всей квартиры",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"/02",
+        "word2":"подбор всей мебели, техники и декора",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":3,
+        "word1":"/03",
+        "word2":"визуализация в виде 2d-коллажей",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":4,
+        "word1":"/04",
+        "word2":"просчет мебели на заказ (кухня, шкаф)",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":5,
+        "word1":"/05",
+        "word2":"закупка и прием всех материалов на объекте",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":6,
+        "word1":"/06",
+        "word2":"поиск и подбор всех мастеров, их контроль",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":7,
+        "word1":"/07",
+        "word2":"авторское сопровождение и реализация",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":8,
+        "word1":"/08",
+        "word2":"организация клининга, вынос мусора",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":9,
+        "word1":"/09",
+        "word2":"стейджинг и фотосъемка объекта",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+      
+    ],
+    "priceAll": [
+      {
+        "id":1,
+        "word1":"студия",
+        "word2":"210 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"евродвушка",
+        "word2":"240 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":3,
+        "word1":"евротрешка",
+        "word2":"260 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+    ]
+  },
+  {
+    "id":2,
+    "Header1":{
+      "id":1,
+      "word1":"",
+      "word2":"",
+      "color1":"white",
+      "color2":"grey",
+      "isHorizontal":true
+    },
+    "Header2":{
+      "id":1,
+      "word1":"",
+      "word2":"онлайн-проект",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "HeaderDescription":{
+      "id":1,
+      "word1":"Для тех, кто готов самостоятельно",
+      "word2":"реализовывать проект",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "ServiceList": [
+      {
+        "id":1,
+        "word1":"/01",
+        "word2":"планировочные решения всей квартиры",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"/02",
+        "word2":"подбор всей мебели, техники и декора",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":3,
+        "word1":"/03",
+        "word2":"визуализация в виде 2d-коллажей",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":4,
+        "word1":"/04",
+        "word2":"просчет мебели на заказ (кухня, шкаф)",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+      
+    ],
+    "priceAll": [
+      {
+        "id":1,
+        "word1":"студия",
+        "word2":"70 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"евродвушка",
+        "word2":"90 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":3,
+        "word1":"евротрешка",
+        "word2":"100 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+    ]
+  },
+  {
+    "id":3,
+    "Header1":{
+      "id":1,
+      "word1":"",
+      "word2":"",
+      "color1":"white",
+      "color2":"grey",
+      "isHorizontal":true
+    },
+    "Header2":{
+      "id":1,
+      "word1":"",
+      "word2":"консультация",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "HeaderDescription":{
+      "id":1,
+      "word1":"для собственников квартир",
+      "word2":"",
+      "color1":"grey",
+      "color2":"white",
+      "isHorizontal":true
+    },
+    "ServiceList": [
+      {
+        "id":1,
+        "word1":"/01",
+        "word2":"помощь в расстановке мебели",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"/02",
+        "word2":"подбор оптимального стилевого решения",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":3,
+        "word1":"/03",
+        "word2":"консультация по организации",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":4,
+        "word1":"/04",
+        "word2":"помощь с комплектацией квартиры и прочее",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+      
+    ],
+    "priceAll": [
+      {
+        "id":1,
+        "word1":"онлайн",
+        "word2":"5 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      },
+      {
+        "id":2,
+        "word1":"выезд на объект",
+        "word2":"7 000₽",
+        "color1":"grey",
+        "color2":"white",
+        "isHorizontal":true
+      }
+    ]
+  }
+]

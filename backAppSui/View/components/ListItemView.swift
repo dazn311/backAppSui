@@ -9,14 +9,14 @@ import SwiftUI
 
 //White & grey
 struct ListItemView: View {
-  var title1: String = "/01"
-  var title2: String = "планировочные решения всей квартиры"
+  var titles: Header
+  
   var body: some View {
     HStack(alignment: .top,spacing: 10) {
-      Text(title1)
+      Text(titles.word1)
         .font(type: .regular,size: 14)
         .foregroundColor(Color(.mainGrey))
-      Text(title2)
+      Text(titles.word2)
         .multilineTextAlignment(.leading)
         .font(type: .regular,size: 14)
         .foregroundColor(Color(.mainBlack))
@@ -24,7 +24,7 @@ struct ListItemView: View {
     .padding(.horizontal,0)
   }
 }
-
-#Preview(String(describing: "ListItemView")){
-    ListItemView()
-}
+//title1: "Комплектация",title2: "под ключ")
+//#Preview(String(describing: "ListItemView")){
+//  ListItemView(titles: .init(from: Header.self as! Decoder))
+//}
