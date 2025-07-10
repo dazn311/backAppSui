@@ -21,7 +21,7 @@ struct PageSixView: View {
           TitleViewGW(title1: "",title2: "консультация ")
           TitleViewWG(title1: "для собственников квартир",title2: "")
             .padding(.bottom,10)
-
+          Divider()
           ListItemView(title1: "/01",title2: "помощь в расстановке мебели")
           ListItemView(title1: "/02",title2: "подбор оптимального стилевого решения")
           ListItemView(title1: "/03",title2: "консультация по организации")
@@ -34,10 +34,7 @@ struct PageSixView: View {
         }
       }
       .padding(.bottom,20)
-      SendBtn(caption:"записаться на консультация")
-
     }
-    .preferredColorScheme(.dark)
   }
 }
 

@@ -1,5 +1,5 @@
 //
-//  PageFour.swift
+//  PricesPageView.swift
 //  backAppSui
 //
 //  Created by Daz N311 on 03.07.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageFour: View {
+struct PricesPageView: View {
   var width: Double
     var body: some View {
 //      GeometryReader { geo in
@@ -32,7 +32,7 @@ struct PageFour: View {
                 .font(type: .regular,size: 14)
 //                .frame(maxWidth: geo.size.width / 1.4, alignment: .trailing)
                 .foregroundColor(Color(.mainGrey))
-              
+              Divider()
               ListItemView(title1: "/00", title2: "замеры объекта")
               ListItemView(title1: "/01")
               ListItemView(title1: "/02",title2: "подбор всей мебели, техники и декора")
@@ -44,29 +44,26 @@ struct PageFour: View {
               ListItemView(title1: "/08",title2: "организация клининга, вынос мусора")
               ListItemView(title1: "/09",title2: "стейджинг и фотосъемка объекта")
               HStack{
-                PriceBlockView()
+                PriceBlockView(title1: "студия",title2: "210 000₽")
                 PriceBlockView(title1: "евродвушка",title2: "240 000₽")
                 PriceBlockView(title1: "евротрешка",title2: "260 000₽")
               }
               .padding(.top,10)
             }
-            .frame(maxWidth: width / 1.4, alignment: .trailing)
-//            .frame(maxWidth: geo.size.width / 1.4, alignment: .trailing)
-            
-            SendBtn()
-            
-            Text("*стоимость по другим планировкам рассчитывается индивидуально")
-              .font(type: .regular,size: 14)
-              .foregroundColor(Color(.mainGrey))
-              .padding(.bottom,10)
+            .frame(maxWidth: width / 1.2, alignment: .trailing)
           }
+          .frame(maxWidth: width, alignment: .trailing)
         }
         .padding(8)
 //      }
     }
 }
 
+#Preview(String(describing: "PricesPageView")){
+  PricesPageView(width: 300)
+}
+
 #Preview(String(describing: "ContentView")){
-  PageFour(width: 300)
+  ContentView()
 }
 

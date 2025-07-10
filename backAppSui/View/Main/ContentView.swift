@@ -18,9 +18,11 @@ struct ContentView: View {
             PageFirst()
             PageSeconds()
             PageThree()
-            PageFour(width: geo.size.width)
+            Divider()
+            PricesPageView(width: geo.size.width)
             PageFiveView()
             PageSixView()
+            SendBtn()
           }
         }
         .frame(maxWidth: .infinity)

@@ -9,8 +9,8 @@ import SwiftUI
 
 //White & grey
 struct PriceBlockView: View {
-  var title1: String = "студия"
-  var title2: String = "210 000₽"
+  var title1: String
+  var title2: String
   var body: some View {
     VStack(alignment: .leading,spacing: 0) {
       Text(title1)
@@ -25,5 +25,5 @@ struct PriceBlockView: View {
 }
 
 #Preview(String(describing: "PriceBlockView")){
-    PriceBlockView()
+  PriceBlockView(title1: "студия",title2: "210 000₽")
 }

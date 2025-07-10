@@ -30,6 +30,7 @@ struct PageFiveView: View {
               .font(type: .regular,size: 14)
               .foregroundColor(Color(.mainGrey))
               .padding(.bottom,10)
+            Divider()
             ListItemView(title1: "/01",title2: "планировочное решение всей квартиры")
             ListItemView(title1: "/02",title2: "подбор всей мебели, техники и декора")
             ListItemView(title1: "/03",title2: "визуализация в виде 2d-коллажей")
@@ -43,7 +44,7 @@ struct PageFiveView: View {
           }
         }
         .padding(.bottom,20)
-        SendBtn()
+//        SendBtn()
         Text("*стоимость по другим планировкам рассчитывается индивидуально")
           .font(type: .regular,size: 14)
           .foregroundColor(Color(.mainGrey))
