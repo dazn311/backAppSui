@@ -15,8 +15,10 @@ struct PricesPageView: View {
 //      GeometryReader { geo in
         VStack(alignment: .leading){
           //h1
-          TitleViewWG(title1: data.Header1.word1,title2: data.Header1.word2)
-            .padding(.bottom,8)
+          if data.Header1.word1.count > 0 {
+            TitleViewWG(title1: data.Header1.word1,title2: data.Header1.word2)
+              .padding(.bottom,8)
+          }
           VStack(alignment: .trailing){
             
             VStack(alignment: .leading){
@@ -51,7 +53,7 @@ struct PricesPageView: View {
           }
           .frame(maxWidth: width, alignment: .trailing)
         }
-        .padding(8)
+        .padding(.vertical,0)
 //      }
     }
 }
