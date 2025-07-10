@@ -13,7 +13,7 @@ struct AuthFormView: View {
           case password
       }
   
-  @EnvironmentObject private var userSettings: UserSettings
+  @EnvironmentObject var userSettings: UserSettings
   @Environment(\.dismiss) var dismiss
   @State private var username = ""
   @State private var password = ""

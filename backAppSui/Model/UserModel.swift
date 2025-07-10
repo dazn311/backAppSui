@@ -12,7 +12,16 @@ class UserSettings: ObservableObject {
   @Published var user: UserModel
   
   init(user: UserModel) {
-    self.user = user
+    self.user = .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .avatar2,
+      status: .other)
   }
   
   func upd(username: String, password: String) {
@@ -50,7 +59,7 @@ struct UserModel : Identifiable, Hashable {
   }
 }
 
-let userDef: UserModel = .init(
+let userSettingsDef: UserModel = .init(
   name: "User",
   password: "",
   lastName: "",

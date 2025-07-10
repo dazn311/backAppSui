@@ -15,7 +15,6 @@ struct TitleViewGW: View {
       HStack(alignment: .top,spacing: 10) {
         Text(title2.uppercased())
           .font(type: .bold,size: 22)
-//          .font(.title)
           .tracking(2)
           .foregroundColor(Color(.mainBlack))
         Text(title1.uppercased())
@@ -28,6 +27,9 @@ struct TitleViewGW: View {
 }
 
 #Preview(String(describing: "TitleViewGW")){
+    
+  VStack(alignment: .trailing) {
     TitleViewGW()
-//  ContentView()
+  }
+//  .frame(width:geo.size.width - 16)
 }

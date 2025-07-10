@@ -17,6 +17,7 @@ struct ListItemView: View {
         .font(type: .regular,size: 14)
         .foregroundColor(Color(.mainGrey))
       Text(title2)
+        .multilineTextAlignment(.leading)
         .font(type: .regular,size: 14)
         .foregroundColor(Color(.mainBlack))
     }

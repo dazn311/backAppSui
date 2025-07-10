@@ -11,28 +11,41 @@ struct ContentView: View {
   @State private var images: [ImagesArr] = imagesArr
   
   var body: some View {
-    NavigationStack {
-      ScrollView {
-        VStack(alignment: .leading,spacing: 30) {
-          PageFirst()
-          PageSeconds()
-          PageThree()
-          PageFour()
-          PageFiveView()
-          PageSixView()
+    GeometryReader { geo in
+      NavigationStack {
+        ScrollView {
+          VStack(alignment: .leading,spacing: 30) {
+            PageFirst()
+            PageSeconds()
+            PageThree()
+            PageFour(width: geo.size.width)
+            PageFiveView()
+            PageSixView()
+          }
         }
+        .frame(maxWidth: .infinity)
+        .background(.mainBG)
+        .scrollIndicators(.hidden)
+        .padding(.bottom)
       }
-      .frame(maxWidth: .infinity)
-      .background(.mainBG)
-      .scrollIndicators(.hidden)
-      .padding(.bottom)
     }
   }
 }
 
 #Preview(String(describing: "ContentView")){
   ContentView()
-    .preferredColorScheme(.dark)
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
+//    .preferredColorScheme(.dark)
 }
 
 

@@ -74,6 +74,17 @@ struct PageFirst: View {
 
 #Preview(String(describing: "PageFirst")){
   PageFirst()
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
 }
 
 #Preview(String(describing: "ContentView")){

@@ -21,9 +21,31 @@ struct PageHeader: View {
 
 #Preview(String(describing: "ContentView")) {
   ContentView()
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
 }
 
 #Preview(String(describing: "PageHeader")) {
   PageHeader()
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
 }
 

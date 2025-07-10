@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonsGroup: View {
-  @EnvironmentObject private var userSettings: UserSettings
+  @EnvironmentObject var userSettings: UserSettings
   @State var isShowAuth: Bool = false
   
   var body: some View {
@@ -59,4 +59,19 @@ struct ButtonsGroup: View {
       AuthFormView()
     }
   }
+}
+
+#Preview(String(describing: "ButtonsGroup")) {
+  ButtonsGroup()
+    .environmentObject(UserSettings(user: .init(
+      name: "User",
+      password: "",
+      lastName: "",
+      phone: "",
+      adress: "",
+      accessesAdress: [],
+      imagesObject: [],
+      avatar: .user,
+      status: .other)
+    ))
 }
