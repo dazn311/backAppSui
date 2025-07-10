@@ -24,6 +24,7 @@ struct ContentView: View {
             ForEach(dataArr) {data in
               PricesPageView(data:data, width: geo.size.width)
             }
+            .scrollIndicators(.hidden)
 
             SendBtn()
           }

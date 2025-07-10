@@ -37,11 +37,13 @@ struct PricesPageView: View {
               ForEach(data.ServiceList) { ocean in
                 ListItemView(titles: ocean)
               }
+              .scrollIndicators(.hidden)
 
               HStack{
                 ForEach(data.priceAll) { titles in
                   PriceBlockView(title1: titles.word1,title2: titles.word2)
                 }
+                .scrollIndicators(.hidden)
               }
               .padding(.top,10)
             }
