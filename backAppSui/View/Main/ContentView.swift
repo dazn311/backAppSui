@@ -11,28 +11,32 @@ struct ContentView: View {
   let dataArr:[PagePriceModel] = Prices().dataArr
 
   var body: some View {
-    GeometryReader { geo in
-      NavigationStack {
-        ScrollView {
-          VStack(alignment: .leading,spacing: 30) {
-            PageFirst()
-            PageSeconds()
-            PageThree(width: geo.size.width)
-
-            Divider()
-
-            ForEach(dataArr) {data in
-              PricesPageView(data:data, width: geo.size.width)
+    NavigationStack {
+      GeometryReader { geo in
+        ScrollViewReader { proxy in
+          ScrollView {
+            VStack(alignment: .leading,spacing: 30) {
+              PageFirst(proxy:proxy)
+              PageSeconds()
+              PageThree(width: geo.size.width)
+              
+              Divider()
+              
+              ForEach(dataArr) {data in
+                PricesPageView(data:data, width: geo.size.width)
+              }
+              .scrollIndicators(.hidden)
+              .id(1)
+              
+              SendBtn()
             }
-            .scrollIndicators(.hidden)
-
-            SendBtn()
           }
+          .frame(maxWidth: .infinity)
+          .background(.mainBG)
+          .scrollIndicators(.hidden)
+          .padding(.bottom)
         }
-        .frame(maxWidth: .infinity)
-        .background(.mainBG)
-        .scrollIndicators(.hidden)
-        .padding(.bottom)
+        
       }
     }
   }

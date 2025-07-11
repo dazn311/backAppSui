@@ -10,6 +10,7 @@ import SwiftUI
 struct ButtonsGroup: View {
   @EnvironmentObject var userSettings: UserSettings
   @State var isShowAuth: Bool = false
+  var proxy: ScrollViewProxy
   
   var body: some View {
     
@@ -25,31 +26,18 @@ struct ButtonsGroup: View {
           .clipShape(Circle())
       }
       Spacer()
-      VStack(spacing: 10){
-        Button {
-          
-        } label: {
-          ZStack{
-            Circle()
-              .fill(Color(.mainBGIcon))
-              .frame(width: 40,height: 40)
-            Image(systemName: "bell")
-              .resizable()
-              .frame(width: 20,height: 20)
-          }
+      Button {
+        withAnimation {
+          proxy.scrollTo(1, anchor: .trailing)
         }
-        Button {
-          
-        } label: {
-          ZStack{
-            Circle()
-              .fill(Color(.mainBGIcon))
-              .frame(width: 40,height: 40)
-            Image(systemName: "magnifyingglass")
-              .resizable()
-              .frame(width: 20,height: 20)
-          }
-          
+      } label: {
+        ZStack{
+          Circle()
+            .fill(Color(.mainBGIcon))
+            .frame(width: 40,height: 40)
+          Image(systemName: "dollarsign.circle")
+            .resizable()
+            .frame(width: 20,height: 20)
         }
       }
       
@@ -62,16 +50,20 @@ struct ButtonsGroup: View {
 }
 
 #Preview(String(describing: "ButtonsGroup")) {
-  ButtonsGroup()
-    .environmentObject(UserSettings(user: .init(
-      name: "User",
-      password: "",
-      lastName: "",
-      phone: "",
-      adress: "",
-      accessesAdress: [],
-      imagesObject: [],
-      avatar: .user,
-      status: .other)
-    ))
+  GeometryReader { geo in
+    ScrollViewReader { proxy in
+      ButtonsGroup(proxy:proxy)
+        .environmentObject(UserSettings(user: .init(
+          name: "User",
+          password: "",
+          lastName: "",
+          phone: "",
+          adress: "",
+          accessesAdress: [],
+          imagesObject: [],
+          avatar: .user,
+          status: .other)
+        ))
+    }
+  }
 }

@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct PageFirst: View {
+  var proxy: ScrollViewProxy
+  
   var body: some View {
-
+ 
     VStack(alignment: .leading,spacing: 10) {
       Rectangle()
         .fill(Color(.clear))
         .frame(height:400)
         .overlay(
           ZStack(alignment: .leading) {
-            PageHeader()
+            PageHeader(proxy:proxy)
               .padding(.horizontal,0)
               .zIndex(1)
             Image(.titleBG)
@@ -73,18 +75,22 @@ struct PageFirst: View {
 }
 
 #Preview(String(describing: "PageFirst")){
-  PageFirst()
-    .environmentObject(UserSettings(user: .init(
-      name: "User",
-      password: "",
-      lastName: "",
-      phone: "",
-      adress: "",
-      accessesAdress: [],
-      imagesObject: [],
-      avatar: .user,
-      status: .other)
-    ))
+  GeometryReader { geo in
+    ScrollViewReader { proxy in
+      PageFirst(proxy:proxy)
+        .environmentObject(UserSettings(user: .init(
+          name: "User",
+          password: "",
+          lastName: "",
+          phone: "",
+          adress: "",
+          accessesAdress: [],
+          imagesObject: [],
+          avatar: .user,
+          status: .other)
+        ))
+    }
+  }
 }
 
 #Preview(String(describing: "ContentView")){

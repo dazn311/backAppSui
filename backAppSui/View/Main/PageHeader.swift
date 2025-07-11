@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct PageHeader: View {
+  var proxy: ScrollViewProxy
   var body: some View {
     VStack(alignment: .leading,spacing: 3) {
-      ButtonsGroup()
+      ButtonsGroup(proxy: proxy)
 //      WellComeView()
       Spacer()
     }
@@ -35,17 +36,21 @@ struct PageHeader: View {
 }
 
 #Preview(String(describing: "PageHeader")) {
-  PageHeader()
-    .environmentObject(UserSettings(user: .init(
-      name: "User",
-      password: "",
-      lastName: "",
-      phone: "",
-      adress: "",
-      accessesAdress: [],
-      imagesObject: [],
-      avatar: .user,
-      status: .other)
-    ))
+  GeometryReader { geo in
+    ScrollViewReader { proxy in
+      PageHeader(proxy:proxy)
+        .environmentObject(UserSettings(user: .init(
+          name: "User",
+          password: "",
+          lastName: "",
+          phone: "",
+          adress: "",
+          accessesAdress: [],
+          imagesObject: [],
+          avatar: .user,
+          status: .other)
+        ))
+    }
+  }
 }
 
